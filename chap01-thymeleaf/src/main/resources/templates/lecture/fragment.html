@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header {
+            color: aquamarine;
+        }
+
+        .footer {
+            color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <header th:replace="~{/common/header :: headerFragmet}">
+        <h1>나는야 HEADER</h1>
+    </header>
+    <aside th:replace="~{/common/aside :: asideFragment(${ test1 },${ test2 })}">
+        <main>
+            <article>
+                <section>
+                    <h1>MAIN!! </h1>
+                </section>
+            </article>
+        </main>
+
+    </aside>
+    <footer th:replace="~{/common/footer :: footerFragment}">
+        <h1>나는야 FOOTER</h1>
+    </footer>
+
+</body>
+</html>

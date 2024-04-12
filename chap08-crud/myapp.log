@@ -1,0 +1,24 @@
+2024-04-04T14:48:21.873+09:00  INFO 8532 --- [restartedMain] c.o.crud.configuration.Application       : Starting Application using Java 17.0.10 with PID 8532 (C:\dev\lecture_code\spring-boot\chap08-crud\build\classes\java\main started by hi in C:\dev\lecture_code\spring-boot\chap08-crud)
+2024-04-04T14:48:21.875+09:00  INFO 8532 --- [restartedMain] c.o.crud.configuration.Application       : No active profile set, falling back to 1 default profile: "default"
+2024-04-04T14:48:21.907+09:00  INFO 8532 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-04T14:48:21.908+09:00  INFO 8532 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-04T14:48:22.630+09:00  INFO 8532 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-04T14:48:22.637+09:00  INFO 8532 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-04T14:48:22.638+09:00  INFO 8532 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-04T14:48:22.671+09:00  INFO 8532 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-04T14:48:22.671+09:00  INFO 8532 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 763 ms
+2024-04-04T14:48:22.881+09:00  INFO 8532 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-04-04T14:48:23.069+09:00  INFO 8532 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-04T14:48:23.090+09:00  INFO 8532 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-04T14:48:23.097+09:00  INFO 8532 --- [restartedMain] c.o.crud.configuration.Application       : Started Application in 1.528 seconds (process running for 1.891)
+2024-04-04T14:48:29.064+09:00  INFO 8532 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-04T14:48:29.064+09:00  INFO 8532 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-04T14:48:29.065+09:00  INFO 8532 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-04T14:48:30.377+09:00  WARN 8532 --- [http-nio-8080-exec-2] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-2][menu/regist] Deprecated unwrapped fragment expression "common/header.html" found in template menu/regist, line 8, col 6. Please use the complete syntax of fragment expressions instead ("~{common/header.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-04-04T14:48:30.398+09:00  INFO 8532 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-04T14:48:30.584+09:00  INFO 8532 --- [http-nio-8080-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@369512a0
+2024-04-04T14:48:30.585+09:00  INFO 8532 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-04T14:48:37.966+09:00  WARN 8532 --- [http-nio-8080-exec-5] o.t.s.p.StandardIncludeTagProcessor      : [THYMELEAF][http-nio-8080-exec-5][menu/list] Deprecated attribute {th:include,data-th-include} found in template menu/list, line 12, col 6. Please use {th:insert,data-th-insert} instead, this deprecated attribute will be removed in future versions of Thymeleaf.
+2024-04-04T14:48:37.966+09:00  WARN 8532 --- [http-nio-8080-exec-5] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-5][menu/list] Deprecated unwrapped fragment expression "common/header.html" found in template menu/list, line 12, col 6. Please use the complete syntax of fragment expressions instead ("~{common/header.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-04-04T15:40:18.258+09:00  INFO 8532 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-04T15:40:18.265+09:00  INFO 8532 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

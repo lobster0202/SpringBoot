@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+</head>
+<body>
+<h1>Conditional 제어문</h1>
+
+<h3> th:if는 변수 표현식의 OGNL을 활용한 조건식으로 조건문을 작성하면
+     결과가 true일 때 해당 태크 범위가 처리된다.
+     th:unless는 표현식의 OGNL을 활용한 결과가
+     false일 때 해당 태그 범위가 처리된다.
+</h3>
+
+<h2>th:if, th:unless</h2>
+<p th:if="${ num > 400}">넘어온 값은 400보다 크다!!</p>
+<p th:if="${ num < 400}">넘어온 값은 400보다 작다!!</p>
+<p th:unless="${ num > 400}">넘어온 값은 400보다 작다!!</p>
+
+<th:block th:if="${ str == '사과'}">
+    <p>🔥🔥🔥🔥🔥</p>
+    <p>F는 fire</p>
+    <p>🔥🔥🔥🔥🔥</p>
+</th:block>
+<th:block th:if="${ str == '바나나'}">
+    <p>🔥🔥🔥🔥🔥🔥🔥</p>
+    <p>마을을 불태우지</p>
+    <p>🔥🔥🔥🔥🔥🔥🔥</p>
+</th:block>
+
+<p th:if="${ num > 200 or num < 0}">200보다 크거나 0보다 작은 수!</p>
+<p th:if="${ str != null and str == '바나나'}">바나나 냠냠</p>
+
+<p th:if="${ !#strings.isEmpty(str) and str == '바나나'}">바나나 냠냠</p>
+
+
+<!-- [Thymeleaf에서 기본 제공되는 Utility Objects]
+     - Strings : 문자 관련 기능 제공
+     - Numbers : 숫자 서식 기능 제공
+     - Objects : 객체 관련 기능 제공
+     - Arrays : 배열 관련 기능 제공
+     - Lists : List 컬렉션 기능 제공
+     - Maps : Map 컬렉션 관련 기능 제공
+     - Message : 메세지, 국제화 처리 기능 제공
+     - Dates : java.util.Date 서식 기능 제공
+     - Calendars : jva.util.Calender 서식 기능 제공  -->
+
+<h2>th:switch, th:case</h2>
+<th:block th:switch="${ str }">
+    <span th:case="사과">사과가 선택되었습니다.</span>
+    <span th:case="바나나">바나나가 선택되었습니다.</span>
+</th:block>
+
+<h2>th:each</h2>
+<h3>th:each를 통해 태그를 반복할 수 있다.</h3>
+<table border="1">
+    <tr>
+        <th>이름</th>
+        <th>나이</th>
+        <th>성별</th>
+        <th>주소</th>
+    </tr>
+    <!-- 향상된 for문 처럼 memberList에 member를 넣어주는 것-->
+    <tr th:each="member, stat : ${ memberList }">
+        <td th:text="${ member.name}"></td>
+        <td th:text="${ member.age}"></td>
+        <td th:text="${ member.gender}"></td>
+        <td th:text="${ member.address}"></td>
+        <td th:text="${ stat.count}"></td>
+    </tr>
+</table>
+
+
+<!-- (석현) squence(5,10) = 5번째에서 시작해서 10번동안 반복하라는 뜻? -->
+<!-- th:each stat으로 반복 상태를 확인할 수 있다.
+     - index : 0부터 시작하는 인덱스 값
+     - count : 1부터 시작하는 값
+     - current : 현재 객체의 정보
+     - even : 짝수 번째 데이터의 여부
+     - odd : 홀수 번째 데이터의 여부
+     - first : 첫 번째 데이터의 여부
+     - last : 마지막 데이터의 여부                                   -->
+<h3>#numbers Utilit Object를 이용한 반복문 작성</h3>
+<th:block th:each="num : ${ #numbers.sequence(5, 10)}">
+    <a th:href="@{ |/numbering/${ numStat.count }| }" th:text="번호 + ${ num }"></a>
+</th:block>
+</body>
+</html>

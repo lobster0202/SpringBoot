@@ -1,0 +1,12 @@
+#키 값에는 항상 띄어쓰기를 하진 않지만
+#키 값과 value 값 사이에는 항상 띄어쓰기를 해야한다
+#여러가지를 추가 할 수 있는 상황이 있는데 그 때 쓴다.
+test:
+  greeting: hi!
+  array: 안녕, 반가워~
+  value: hello world
+
+username: 판다
+
+#  test.greeting=hi!
+#  test.array=안녕, 반가워~

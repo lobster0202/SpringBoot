@@ -1,0 +1,26 @@
+#spring datasource config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/menudb
+    username: ohgiraffers
+    password: ohgiraffers
+
+# mybatis config
+mybatis:
+  mapper-locations: mappers/**/*.xml
+  configuration:
+    #underscore ??? camelcase? ???? ?
+    # camelcase?? 2?? ??? ??? ??? ???? ??? camelcase?
+    # userID ? ???? userId? ????
+    map-underscore-to-camel-case: true
+
+# logging config
+logging:
+#  level:
+#    root: debug
+
+  file:
+    name: myapp.log
+    path: C:/dev/lecture_code/spring-boot/cahp08-crud
+

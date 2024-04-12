@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload 테스트</title>
+</head>
+<body>
+
+    <h1>single file upload</h1>
+    <!-- 꼭 인코딩의 속성을 바꿔줘야 한다-->
+    <form action="single-file" method="post" enctype="multipart/form-data">
+        파일 : <input type="file" name="singleFile"><br>
+        파일 설명 : <input type="text" name="singleFileDescription"><br>
+        <input type="submit">
+    </form>
+
+    <h1>multi file upload</h1>
+    <form action="multi-file" method="post" enctype="multipart/form-data">
+        파일 : <input type="file" name="multiFile" multiple><br>
+        파일 설명 : <input type="text" name="multiFileDescription"><br>
+        <input type="submit">
+
+    </form>
+
+
+
+
+</body>
+</html>

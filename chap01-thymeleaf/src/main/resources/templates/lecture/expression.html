@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Expression(표현식)</h1>
+
+<h2>주석</h2>
+<ul>
+    <li>parser-level 주석</li>
+    <!--/* parser-level 주석 내용~~ */-->
+    <li>prototype-only 주석</li>
+    <!--/*/ prototype-only 주석 내용~~ /*/-->
+</ul>
+
+<h2>표현식</h2>
+
+<h3>변수 표현식 ${...}</h3>
+<p th:text="${ param.title }"></p>
+<p th:text="${ param.no[0] }"></p>
+<p th:text="${ param.no[1] }"></p>
+
+<h3> 메세지 표현식 ${...}</h3>
+<p th:text="#{message.values}"></p>
+
+<h3>링크 표현식 @{...}</h3>
+<a th:href="@{/}">HOME</a>
+
+<h3>선택 변수 표현식 *{...}</h3>
+<p th:text="${member.name}"></p>
+<p th:object="${member}" th:text="*{age}"></p>
+<p th:object="${member}" th:text="*{gender}"></p>
+<div th:object="${ member }">
+    <p th:text="*{ name }"></p>
+    <p th:text="*{ address }"></p>
+</div>
+
+<h3>HTML 출력 - th:text, th:utext, th:value</h3>
+<ul>
+    <li th:text="${ hello }"></li>
+    <li th:utext="${ hello }"></li>
+    <li><input type="text" th:value="Thymeleaf"/></li>
+
+</ul>
+
+<h3 th:inline="none">인라인 표현식 [[...]], [(...)]</h3>
+<ul>
+    <li th:inline="text">[[${hello}]]</li>
+    <li [(${ hello })]></li>
+    <li th:inline="none">[[${hello}]]</li>
+    <li th:inline="text">[[${hello}]]</li>
+</ul>
+<script th:inline="javascript">
+    window.onload = function () {
+
+        let hello = [[${ hello }]];
+
+        alert(hello);
+
+    }
+</script>
+
+<h2>th:blcok</h2>
+<h3>범위를 지정하고 싶을 때 사용한다.</h3>
+<th:block th:object="${member}">
+    <p th:text="*{ name }"></p>
+    <p th:text="*{ age }"></p>
+    <p th:text="*{ gender }"></p>
+    <p th:text="*{ address }"></p>
+</th:block>
+
+<h2>리터럴 치환 ㅣ..ㅣ</h2>
+<h3>'+'를 쓰지 않고 문자열 합치기</h3>
+<p th:object="${ member }" th:text="|name = '*{ name }'|"></p>
+<p th:object="${ member }" th:text="|address = '*{ address }'|"></p>
+
+
+</body>
+</html>
